@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Something for You</title>
+<meta name="theme-color" content="#fbf4ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="prog" id="prog" role="progressbar" aria-label="Journey progress" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1"><span id="bar"></span></div>
+
+<main>
+<noscript><p class="ns">This little page needs JavaScript to open. Please turn it on and refresh.</p></noscript>
+
+<!-- 1. Welcome -->
+<section class="sec" id="welcome" aria-labelledby="greet">
+  <p class="hand rv" id="tag"></p>
+  <h1 class="rv" id="greet" tabindex="-1"></h1>
+  <p class="lead rv" id="sub"></p>
+  <button class="btn rv" id="start" type="button"></button>
+</section>
+
+<!-- 2. Letter -->
+<section class="sec" id="letter" hidden aria-labelledby="h-letter">
+  <h2 class="rv" id="h-letter" tabindex="-1">Open the letter</h2>
+  <p class="hand rv">Tap the envelope</p>
+  <button class="env rv" id="env" type="button" aria-expanded="false" aria-label="Open the envelope">
+    <span class="back"></span><span class="paper"></span><span class="front"></span><span class="flap"></span>
+  </button>
+  <div class="paperbox" id="ltext" hidden></div>
+  <button class="btn" id="toCards" type="button" hidden>Continue</button>
+</section>
+
+<!-- 3. Cards -->
+<section class="sec" id="cards" hidden aria-labelledby="h-cards">
+  <h2 class="rv" id="h-cards" tabindex="-1">Things I appreciate about you</h2>
+  <p class="lead rv">Tap a card to turn it over.</p>
+  <p class="hand rv" id="count" aria-live="polite"></p>
+  <div class="grid rv" id="grid"></div>
+  <button class="btn" id="toStars" type="button">Continue</button>
+</section>
+
+<!-- 4. Stars -->
+<section class="sec night" id="stars" hidden aria-labelledby="h-stars">
+  <h2 class="rv" id="h-stars" tabindex="-1">Little notes among the stars</h2>
+  <p class="lead rv">Pick a star. Pick another. They’re all for you.</p>
+  <div class="field rv" id="field"></div>
+  <div class="note" id="note" role="status" hidden>
+    <p id="notetxt"></p>
+    <button class="x" id="noteclose" type="button" aria-label="Close note">×</button>
+  </div>
+  <button class="btn" id="toPlay" type="button">Continue</button>
+</section>
+
+<!-- 5. Tiny game -->
+<section class="sec" id="play" hidden aria-labelledby="h-play">
+  <h2 class="rv" id="h-play" tabindex="-1">One tiny question before the important one</h2>
+  <p class="lead rv">All optional. Poke around, or skip ahead.</p>
+  <div class="toys rv">
+    <div><button class="btn alt" id="rnd" type="button">Tell me something nice</button><p class="out" id="out1" aria-live="polite"></p></div>
+    <div><div class="picks" id="picks" role="group" aria-label="Pick a star"></div><p class="out" id="out2" aria-live="polite"></p></div>
+    <div><button class="card mystery" id="mystery" type="button" aria-pressed="false" aria-label="Mystery card, tap to flip"><span class="flip"><span class="f"><span class="ic">?</span><span>Mystery card</span></span><span class="b" id="mtext"></span></span></button></div>
+    <div><button class="btn alt" id="more" type="button">One more little thing</button><p class="out" id="out3" aria-live="polite"></p></div>
+  </div>
+  <button class="btn" id="skip" type="button">Skip to the important part</button>
+</section>
+
+<!-- 6. Confession -->
+<section class="sec quiet" id="confess" hidden aria-labelledby="h-confess">
+  <h2 class="rv" id="h-confess" tabindex="-1">Something honest</h2>
+  <div class="confession rv" id="ctext"></div>
+  <p class="question rv" id="q"></p>
+  <div class="choices rv">
+    <button class="btn choice" id="yes" type="button"></button>
+    <button class="btn choice" id="no" type="button"></button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <button class="btn alt" id="restart" type="button">Start again</button>
+  <p class="fine">Anyone with this page’s link can open it. Nothing you click here is saved, tracked, or sent anywhere.</p>
+</footer>
+
+<dialog id="reply" aria-labelledby="rt">
+  <div class="fx" id="fx" aria-hidden="true"></div>
+  <h2 id="rt"></h2>
+  <p id="rm"></p>
+  <button class="btn" id="back" type="button">Back to the message</button>
+</dialog>
+
+<button class="top" id="top" type="button" aria-label="Back to top" hidden>↑</button>
+<button class="btn alt music" id="music" type="button" hidden>🔈 Music</button>
+
+<script src="script.js"></script>
+</body>
+</html>
